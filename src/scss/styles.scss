@@ -1,0 +1,29 @@
+@import 'fonts.css';
+@import 'variables',
+        'mixins';
+
+.container-fluid{
+    &.home{
+        &::before{
+            content: "";
+            position: absolute;
+            height: 120px;
+            background-color: $principal;
+            width: 100%;
+            left: 0;
+            top: 40%;
+            z-index: -1;
+        }
+    }
+}
+h3,label{
+    @include font-family( "GalanoGrotesque-medium", 1.2 );
+    color: $color-fuente-principal;
+}
+button, .boton-enlace{
+    @include font-family( "GalanoGrotesque-medium", 1.2 );
+}
+h1{
+    @include font-family( "GalanoGrotesque-Bold", 1.2 );
+    @include rem(42);
+}

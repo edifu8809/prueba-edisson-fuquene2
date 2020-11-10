@@ -1,0 +1,61 @@
+*{
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+   
+} 
+@font-face {
+	font-family: 'icons';
+	src:  url('../assets/fonts/icon-font.eot');
+	src:  url('../assets/fonts/icon-font.eot?7z4ma2#iefix') format('embedded-opentype'),
+	  url('../assets/fonts/icon-font.ttf?7z4ma2') format('truetype'),
+	  url('../assets/fonts/icon-font.woff?7z4ma2') format('woff'),
+	  url('../assets/fonts/icon-font.svg?7z4ma2#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'GalanoGrotesque-medium';
+    src: url('../assets/fonts/GalanoGrotesque-Medium.eot');
+    src: url('../assets/fonts/GalanoGrotesque-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/GalanoGrotesque-Medium.woff') format('woff'),
+        url('../assets/fonts/GalanoGrotesque-Medium.ttf') format('truetype'),
+        url('../assets/fonts/GalanoGrotesque-Medium.svg#GalanoGrotesque-Medium') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GalanoGrotesque-bold';
+    src: url('../assets/fonts/GalanoGrotesque-Bold.eot');
+    src: url('../assets/fonts/GalanoGrotesque-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/GalanoGrotesque-Bold.woff') format('woff'),
+        url('../assets/fonts/GalanoGrotesque-Bold.ttf') format('truetype'),
+        url('../assets/fonts/GalanoGrotesque-Bold.svg#GalanoGrotesque-Bold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GalanoGrotesque-light';
+    src: url('../assets/fonts/GalanoGrotesque-ExtraLight.eot');
+    src: url('../assets/fonts/GalanoGrotesque-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/GalanoGrotesque-ExtraLight.woff') format('woff'),
+        url('../assets/fonts/GalanoGrotesque-ExtraLight.ttf') format('truetype'),
+        url('../assets/fonts/GalanoGrotesque-ExtraLight.svg#GalanoGrotesque-ExtraLight') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+i {
+	font-family: 'icons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

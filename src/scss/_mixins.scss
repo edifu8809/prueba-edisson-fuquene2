@@ -1,0 +1,45 @@
+@mixin font-family( $font-family, $line-height ) {
+	font-weight: normal;
+	line-height: $line-height;
+	font-family: $font-family;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+@mixin font-icon() {
+	display: inline-block;
+	font-family: "icons";
+	speak: none;
+	text-decoration: inherit;
+}
+@mixin aligned-font-icon( $alignment: left, $align-margin: 10px, $content:"\f118", $size:40px) {
+	@if $alignment == left {
+		&:before {
+			content: $content;
+			font-size: $size;
+			margin-right: $align-margin;
+			@include font-icon();
+		}
+	} @else if $alignment == right {
+		&:after {
+			content: $content;
+			font-size: $size;
+			margin-left: $align-margin;
+			@include font-icon();
+		}
+	} @else {
+		&:before {
+			content: $content;
+			font-size: $size;
+			margin-right: $align-margin;
+			@include font-icon();
+		}
+	}
+}
+
+//mixin para tamaño de fuentes
+@mixin	rem($size) {
+	font-size: $size+px;
+	font-size: calulateRem($size);
+}

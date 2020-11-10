@@ -1,0 +1,12 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.container-fluid{
+    &.header{
+        background-color: $secundario;
+    }
+    img{
+        padding: 10px 0;
+        width: 214px;
+    }
+}

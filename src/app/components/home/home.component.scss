@@ -1,0 +1,38 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+.content-form{
+    max-width: 743px;
+    width: 100%;
+    box-shadow: 6px 4px 14px 1px rgb(116 109 123 / 21%);
+    background-color: $blanco;
+    margin: 5% 0 0 ;
+    padding: 40px 40px 10px;
+    .title{
+        color: $principal;
+    }
+    .card{
+        border: 0;
+    }
+}
+.btn{
+    background-color: $boton-verde;
+    border: none;
+}
+.boton-enlace{
+    margin-top: 20px;
+    display: block;
+}
+
+
+@media (max-width: 600px) {
+    .content-form {
+        padding: 40px 10px 10px;
+        .title{
+            @include rem(25);
+            margin-bottom: 10px;
+        }
+        .lead{
+            @include rem(15);
+        }
+    }
+}
