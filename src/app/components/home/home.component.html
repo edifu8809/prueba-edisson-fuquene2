@@ -1,70 +1,126 @@
-<!-- main app container -->
-<div class="content-form">
+<div class="texto">
     <h1 class="title text-center">Cotiza tu Seguro Automotriz</h1>
     <h3 class="lead text-center"> ¡Resultados Instantáneos!</h3>
-
-    <div class="card m-3">
-        
-        <div class="card-body">
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                <div class="form-row">
-                    <div class="form-group col-sm-12 col-md-6">
-                        <label>Marca del auto</label>
-                        <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                            <option value=""></option>
-                            <option value="Chevrolet">Chevrolet</option>
-                            <option value="Mazda">Mazda</option>
-                            <option value="Renault">Renault</option>
-                            <option value="Citroen">Citroen</option>
-                        </select>
-                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                            <div *ngIf="f.title.errors.required">Escoje una marca</div>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12 col-md-6">
-                        <label>Modelo del auto</label>
-                        <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                            <option value=""></option>
-                            <option value="Modelo 1">"Modelo 1"</option>
-                            <option value="Modelo 2">Modelo 2</option>
-                            <option value="Modelo 3">Modelo 3</option>
-                            <option value="Modelo 4">Modelo 4</option>
-                        </select>
-                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                            <div *ngIf="f.title.errors.required">Escoje un modelo</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-sm-12 col-md-4 ">
-                        <label>Año</label>
-                        <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                            <option value=""></option>
-                            <option value="2020">"2020"</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                        </select>
-                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                            <div *ngIf="f.title.errors.required">Escoje un año</div>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-12 col-md-8">
-                        <label>Email</label>
-                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                            <div *ngIf="f.email.errors.required">Escribe un email</div>
-                            <div *ngIf="f.email.errors.email">Escribe un email valido</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center">
-                    <button class="btn btn-primary mt-4 btn-block">Register</button>
-                    <a class="boton-enlace">Recuperar cotización</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
 </div>
+<div class="div-flex">
+    <section class="col-xl-8">
+        <swiper [config]="config">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://loremflickr.com/g/600/400/paris" alt="img 1"></div>
+                <div class="swiper-slide"><img src="https://loremflickr.com/600/400/brazil,rio" alt="img 2"></div>
+                <div class="swiper-slide"><img src="https://loremflickr.com/600/400/paris,girl/all" alt="img 3"></div>
+                
+            </div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+        
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </swiper>
+    </section>
+    
+       
+    <div class="content-form col-xl-4">
+
+
+        <div class="card m-3">
+            
+            <div class="card-body">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="form-group col-sm-12 col-md-12">
+                            <label class="input">
+                                <select formControlName="title" class="form-control input__field" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                                    <option value="" selected disabled hidden></option>
+                                    <option value="Chevrolet">Chevrolet</option>
+                                    <option value="Mazda">Mazda</option>
+                                    <option value="Renault">Renault</option>
+                                    <option value="Citroen">Citroen</option>
+                                </select>
+                                <span class="input__label">Marca del auto</span>
+                                <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                                    <div *ngIf="f.title.errors.required">Escoje una marca</div>
+                                </div>
+                            </label>
+                            
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="form-group col col-xl-12">
+                                    <label class="input">
+                                        <select formControlName="firstName" class="form-control input__field" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+                                            <option value=""></option>
+                                            <option value="Modelo 1">Modelo 1</option>
+                                            <option value="Modelo 2">Modelo 2</option>
+                                            <option value="Modelo 3">Modelo 3</option>
+                                            <option value="Modelo 4">Modelo 4</option>
+                                        </select>
+                                        <span class="input__label">Modelo del auto</span>
+                                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                            <div *ngIf="f.firstName.errors.required">Escoje un modelo</div>
+                                        </div>
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-group col col-xl-12">
+                                    <label class="input">
+                                        <select formControlName="lastName" class="form-control input__field" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+                                            <option value="Escoje un año" disabled>Escoje un año</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                        </select>
+                                        <span class="input__label">Año</span>
+                                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                            <div *ngIf="f.lastName.errors.required">Escoje un año</div>
+                                        </div>
+                                    </label>
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="form-group col-sm-12 col-xl-12">
+                            <label  class="input">
+                                <input type="text" formControlName="email" class="form-control input__field" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Escribe un email</div>
+                                    <div *ngIf="f.email.errors.email">Escribe un email valido</div>
+                                </div>
+                                <span class="input__label">Email</span>
+                            </label>
+                            
+                        </div>
+                        <div class="form-group col-sm-12 col-xl-12">
+                            <label class="input">
+                                <input (keypress)="keyPress($event)" required type="text" formControlName="phonenumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phonenumber.errors }">
+
+                                <div *ngIf="submitted && f.phonenumber.errors" class="invalid-feedback">
+                                    <div *ngIf="f.phonenumber.errors.required">El número es requerido</div>
+                                    <div *ngIf="f.phonenumber.errors.pattern || f.phonenumber.errors.maxlength || f.phonenumber.errors.minlength">El número de teléfono debe tener al menos 10 números</div>
+                                </div>
+                                <span class="input__label">Teléfono celular</span>
+                                
+                            </label>
+
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="btn btn-primary mt-4 btn-block">Cotizar ahora</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+

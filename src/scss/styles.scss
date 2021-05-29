@@ -4,6 +4,7 @@
 
 .container-fluid{
     &.home{
+        padding: 0;
         &::before{
             content: "";
             position: absolute;
@@ -16,6 +17,11 @@
         }
     }
 }
+.form-control{
+    border-radius: 0;
+    padding-left: 5px;
+}
+
 h3,label{
     @include font-family( "GalanoGrotesque-medium", 1.2 );
     color: $color-fuente-principal;
@@ -26,4 +32,80 @@ button, .boton-enlace{
 h1{
     @include font-family( "GalanoGrotesque-Bold", 1.2 );
     @include rem(42);
+    color: $principal;
+}
+input,select,.form-control:focus{
+    &:focus{
+        outline: none;
+        border-color: rgb(0 0 0 / 0%);
+        box-shadow: none;
+    }
+}
+.form-group{
+    padding: 0 !important;
+    margin: 0;
+}
+.swiper-pagination-fraction{
+    position: absolute;
+    top: 0;
+    background: rgb(255 255 255);
+    height: 27px;
+    width: 60px;
+    top: 5%;
+    left: 5%;
+
+}
+.swiper-slide{
+    height: 270px;
+    img{
+        width: 100%;
+    }
+}
+.swiper-button-next,
+.swiper-button-prev{
+    display: none;
+}
+@media (min-width: 2560px) {
+
+}
+@media (min-width: 1200px) {
+  
+}
+
+@media (min-width: 768px) {
+    .swiper-slide{
+        height: 557px;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        display: flex;
+        background: $blanco;
+        border-radius: 20px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 72px;
+        left: 40px;
+        right: inherit;
+        top: auto;
+        &::after{
+            color: rgb(0 0 0);
+            font-size: 19px;
+        }
+   
+        
+    }
+    .swiper-button-next{
+        left: 95px;
+    }
+    .col-xl-8{
+        padding-right: 0;
+        padding-left: 0;
+        width: auto;
+
+    }
+    .col-xl-4{
+        padding-right: 0;
+        padding-left: 0;
+        width: auto;
+    }
 }
