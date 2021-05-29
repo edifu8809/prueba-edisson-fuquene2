@@ -1,38 +1,121 @@
 @import '../../../scss/mixins';
 @import '../../../scss/variables';
 .content-form{
-    max-width: 743px;
-    width: 100%;
-    box-shadow: 6px 4px 14px 1px rgb(116 109 123 / 21%);
-    background-color: $blanco;
-    margin: 5% 0 0 ;
-    padding: 40px 40px 10px;
+    // max-width: 743px;
+    // width: 100%;
+    // box-shadow: 6px 4px 14px 1px rgb(116 109 123 / 21%);
+    // background-color: $blanco;
+    // margin: 5% 0 0 ;
+    // padding: 40px 40px 10px;
+    position: absolute;
+    top: 57%;
+    z-index: 10;
     .title{
         color: $principal;
     }
     .card{
         border: 0;
+        border-top: 5px solid $principal;
+        background: rgb(230 230 230);
+        border-radius: 0;
     }
 }
 .btn{
     background-color: $boton-verde;
     border: none;
+    border-width: 0;
+    border-bottom: 3px solid rgb(111 136 56);
 }
 .boton-enlace{
     margin-top: 20px;
     display: block;
 }
+.texto{
+    padding: 4% 0 8%;
+}
+.input {
+    position: relative;
+    display: block;
+    background: #ddd;
+    margin: 0;
+    &__label {
+        position: absolute;
+        left: 10px;
+        top: clamp(1.2rem, 2.5vw, 2rem); 
+        transform: translate(0, -50%);
+        pointer-events: none;
+        transform-origin: 0 0;
+        transition: 200ms transform ease-out 200ms;
+        will-change: transform;
+        transition: all 0.1s ease;
+        opacity: 1;
+        @include rem(14);
+    }
+}
+.ng-valid ~ .input__label{
+    opacity: 0;
+}
+.ng-dirty ~ .input__label{
+    opacity: 0;
+}
+// @media (max-width: 600px) {
+//     .content-form {
+//         padding: 40px 10px 10px;
+//         .title{
+//             @include rem(25);
+//             margin-bottom: 10px;
+//         }
+//         .lead{
+//             @include rem(15);
+//         }
+//     }
+// }
 
 
-@media (max-width: 600px) {
-    .content-form {
-        padding: 40px 10px 10px;
-        .title{
-            @include rem(25);
-            margin-bottom: 10px;
+@media (min-width: 768px) {
+    .content-form{
+        top: clamp(7vh, 31%, 50%);
+        right: clamp(3vw, 7vw, 18vw);
+    }
+   
+}
+
+@media (min-width: 1200px) {
+    .form-group{
+        padding: 0 0 13px!important;
+    }
+    .input{
+        display: flex;
+        flex-direction: column-reverse;
+        background: transparent;
+        padding-bottom: 13px;
+    }
+    .is-invalid~.invalid-feedback, .is-invalid~.invalid-tooltip, .was-validated :invalid~.invalid-feedback, .was-validated :invalid~.invalid-tooltip{
+        position: absolute;
+        bottom: -4px;
+    }
+    .card-body{
+        padding: 2.25rem 3rem;
+    }
+    .input__label{
+        position: relative;
+        top: 0;
+        transform: inherit;
+        left: 0;
+    }
+    .content-form{
+        position: relative;
+        top: initial;
+        right: initial;
+        display: flex;
+        .card{
+            border-top: 0;
         }
-        .lead{
-            @include rem(15);
-        }
+    }
+    .div-flex{
+        display: flex;
+    }
+    .m-3{
+        margin: 0 !important;
     }
 }
